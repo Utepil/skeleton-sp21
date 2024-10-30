@@ -19,7 +19,8 @@ class GUI extends TopLevel implements Observer {
     /** Minimum size of board in pixels. */
     private static final int MIN_SIZE = 500;
 
-    /** A new window with given TITLE providing a view of MODEL. */
+    /** A new window with given TITLE providi
+ng a view of MODEL. */
     GUI(String title, Model model) {
         super(title, true);
         addMenuButton("Game->New", this::newGame);
@@ -29,7 +30,6 @@ class GUI extends TopLevel implements Observer {
 
         _model = model;
         _model.addObserver(this);
-
         _widget = new BoardWidget(model.size());
         add(_widget,
             new LayoutSpec("y", 0,
