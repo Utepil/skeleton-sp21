@@ -139,11 +139,11 @@ public class Model extends Observable {
      * */
     public static boolean emptySpaceExists(Board b) {
         // TODO: Fill in this function.
-        for(int i  = 0; i < b.size(); i++){
-            for(int j = 0; j < b.size(); j++){
-                    Tile temp = b.tile(i,j);
-                    if(temp.value() != 0){
-                        return true;
+        for(int i  = 0; i < b.size(); i++) {
+            for (int j = 0; j < b.size(); j++) {
+                Tile temp = b.tile(i, j);
+                if (temp == null) {
+                    return true;
                 }
             }
         }
@@ -160,6 +160,9 @@ public class Model extends Observable {
         for(int i = 0; i < b.size();i++){
             for(int j = 0; j < b.size(); j++){
                 Tile temp = b.tile(i,j);
+                if(temp == null){
+                    continue;
+                }
                 if(temp.value() == MAX_PIECE){
                     return true;
                 }
