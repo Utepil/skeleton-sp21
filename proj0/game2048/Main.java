@@ -19,8 +19,7 @@ public class Main {
      *  selected.). */
     public static void main(String... args) {
         CommandArgs options =
-            new CommandArgs("--seed=(\\d+) --log=(.+)",
-                            args);
+            new CommandArgs("--seed=(\\d+) --log=(.+)", args);
         if (!options.ok()) {
             System.err.println("Usage: java game2048.Main [ --seed=NUM ] "
                                + "[ --log=LOG_FILE ]");
