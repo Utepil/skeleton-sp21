@@ -39,7 +39,7 @@ public class IntList {
     /** Method to return a string representation of an IntList */
     public String toString() {
         if (rest == null) {
-            // Converts an Integer to a String!
+            // Converts an Integer to a String
             return String.valueOf(first);
         } else {
             return first + " -> " + rest.toString();
