@@ -1,5 +1,4 @@
-import java.lang.management.ThreadInfo;
-
+package deque;
 public class LinkedListDeque<her> {
     public class IntNode {
         public IntNode pre;
