@@ -3,18 +3,18 @@ package deque;
 import edu.neu.ccs.XObject;
 
 public class ArrayDeque<item> {
-    private int size
+    private int size;
     private int nextFirst = 3;
     private int nextLast = 4;
-    private item[] item;
+    private item[] items;
     public ArrayDeque(){
-        item[] item = (item[]) new Object(8);
+        items = (item[]) new Object[8];
         size = 0;
     }
 
 
     public void addFirst(item item){
-        item[nextFirst] = item;
+        items[nextFirst] = item;
         nextFirst--;
         if(nextFirst == 0){
             nextFirst = 7;
@@ -22,7 +22,7 @@ public class ArrayDeque<item> {
         size++;
     }
     public void addLast(item item){
-        item[nextLast] = item;
+        items[nextLast] = item;
         nextLast++;
         if(nextLast == 7){
             nextLast = 0;
@@ -30,11 +30,11 @@ public class ArrayDeque<item> {
         size++;
     }
     public void removeFirst(item item){
-        item[nextFirst+1] = null;
+        items[nextFirst+1] = null;
         size--;
     }
     public void removeLast(item item){
-        item[nextLast-1] = null
+        items[nextLast-1] = null;
         size--;
     }
 
@@ -48,7 +48,7 @@ public class ArrayDeque<item> {
         return size == 0;
     }
     public item get(int index){
-        return item[index];
+        return items[index];
     }
     public int size(){
         return size;
