@@ -1,7 +1,5 @@
 package deque;
 
-import edu.neu.ccs.XObject;
-
 public class ArrayDeque<item> {
     private int size;
     private int nextFirst = 3;

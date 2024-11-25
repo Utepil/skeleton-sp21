@@ -79,23 +79,25 @@ public class LinkedListDeque<her> {
         size++;
     }
 
-    public void removeFirst(){
-        if(size == 0) return;
+    public her removeFirst(){
+        if(size == 0) return null;
         sentinel.next.pre = sentinel.pre;
         sentinel.pre.next = sentinel.next;
         IntNode temp = sentinel.next;
         sentinel.next = null;
         sentinel = temp;
         size--;
+        return temp.item;
     }
-    public void removeLast(){
-        if(size == 0) return;
+    public her removeLast(){
+        if(size == 0) return null;
         sentinel.pre.pre.next = sentinel;
         IntNode temp= sentinel.pre;
         sentinel.pre = temp.pre;
 
         temp.pre = null;
         size--;
+        return temp.item;
     }
 
     public int size(){
