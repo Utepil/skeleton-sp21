@@ -5,6 +5,7 @@ public class ArrayDeque<item> {
     private int nextFirst = 3;
     private int nextLast = 4;
     private item[] items;
+
     public ArrayDeque(){
         items = (item[]) new Object[8];
         size = 0;
@@ -27,13 +28,17 @@ public class ArrayDeque<item> {
         }
         size++;
     }
-    public void removeFirst(item item){
+    public item removeFirst(item item){
+        item temp = items[nextFirst+1];
         items[nextFirst+1] = null;
         size--;
+        return temp;
     }
     public void removeLast(item item){
+        item temp = items[nextLast-1];
         items[nextLast-1] = null;
         size--;
+        return temp;
     }
 
     private void checkIfResize(item[] array){
