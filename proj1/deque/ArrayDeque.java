@@ -29,12 +29,14 @@ public class ArrayDeque<item> {
         size++;
     }
     public item removeFirst(item item){
+        if(size == 0) return null;
         item temp = items[nextFirst+1];
         items[nextFirst+1] = null;
         size--;
         return temp;
     }
     public item removeLast(item item){
+        if(size == 0) return null;
         item temp = items[nextLast-1];
         items[nextLast-1] = null;
         size--;
