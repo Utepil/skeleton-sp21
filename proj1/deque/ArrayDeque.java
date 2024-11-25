@@ -34,7 +34,7 @@ public class ArrayDeque<item> {
         size--;
         return temp;
     }
-    public void removeLast(item item){
+    public item removeLast(item item){
         item temp = items[nextLast-1];
         items[nextLast-1] = null;
         size--;
